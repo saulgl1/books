@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:12.4
+    environment:
+      POSTGRES_DB: booksdb
+      POSTGRES_USER: booksuser
+      POSTGRES_PASSWORD: bookspwd
+    networks:
+      - pg-network
+    ports:
+      - "5432:5432"
+
+networks:
+  pg-network:
+    driver: bridge
